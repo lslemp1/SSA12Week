@@ -24,13 +24,11 @@ public class Thermometer {
 		}
 		
 		else if (isFarenheit && !userWantsFarenheit){
-				temperature = ((temperature-32)*5) /9;
-				return Math.round(temperature);
+				return ((temperature-32)*5) /9;
 		}
 		
 		else if (!isFarenheit && userWantsFarenheit){
-			temperature = ((9*(temperature)/5)) + 32;
-			return Math.round(temperature);
+			return ((9*(temperature)/5)) + 32;
 			}
 		
 		else{
