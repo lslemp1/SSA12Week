@@ -6,6 +6,7 @@ public class Thermometer {
 	boolean isFarenheit;
 	
 	//initialize temperature to farenheit
+	//if you don't call the next constructor, defaults to this one. 
 	public Thermometer (int temperature){
 		this(temperature, true);
 	}
