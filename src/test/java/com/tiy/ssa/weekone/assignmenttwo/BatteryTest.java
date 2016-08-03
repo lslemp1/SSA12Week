@@ -8,7 +8,7 @@ public class BatteryTest {
 
 	@Test
 	public void getCapacity(){
-		assertEquals(100, new Battery(100,100).getCapacity(),0);
+		assertEquals(100, new Battery(100,60).getCapacity(),0);
 	}
 	
 	@Test
