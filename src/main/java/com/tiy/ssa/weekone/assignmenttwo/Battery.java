@@ -7,14 +7,23 @@ public class Battery {
 	//in kWh
 	float leftOver;
 	
-	public Battery(float capacity){
+	public Battery(float capacity, float leftOver){
 		
 		this.capacity = capacity;
-		this.leftOver = capacity;
+		this.leftOver = leftOver;
+		
+	}
+	
+	public float getCapacity(){
+		return this.capacity;
+	}
+	
+	public float getRemaining(){
+		return this.leftOver;
 	}
 	
 	//charge battery, can't exceed max. capacity
-	public float charge(float chargeAmount, float leftOver){
+	public float charge(float chargeAmount){
 		
 		if(leftOver >= capacity || (leftOver+chargeAmount) >= capacity){
 		return capacity;
@@ -25,7 +34,7 @@ public class Battery {
 	}
 
 	//discharge battery, can't go to negative
-	public float discharge(float dischargeAmount, float leftOver){
+	public float discharge(float dischargeAmount){
 		
 		if(leftOver < 0 || (leftOver-dischargeAmount) < 0){
 			return 0;
@@ -37,10 +46,10 @@ public class Battery {
 	
 	//prints out time usage remaining	
 	//kW * hour = kWh; remaining time in minutes = (kWh/kW) *60
-	public float howLong(float power, float leftOver){
+	public int howLong(float power){
 		
 		if(leftOver > 0 && leftOver <= capacity){		
-		float remaining = (leftOver/power)*60;
+		int remaining = (int) ((leftOver/power)*60);
 		return remaining;
 	}
 		else{
