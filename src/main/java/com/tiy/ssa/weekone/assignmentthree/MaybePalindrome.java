@@ -13,14 +13,12 @@ public class MaybePalindrome {
 	public boolean isPalindrome(){
 		
 		String reverse = "";
-		
-		for (int i = value.length()-1; i>=0; i--){
-			reverse += value.charAt(i);
-			if(value.equals(reverse)){
-				return true;
+			
+			for (int i = value.length()-1; i>=0; i--){
+	            reverse += value.charAt(i);
+	            
 			}
-		}
-		return false;
+			return value.equals(reverse);
 	}
 
 

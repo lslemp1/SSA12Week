@@ -23,4 +23,12 @@ public class MathsTest {
 		
 	}
 	
+	@Test
+	public void stringy(){
+		String abc = "ABC";
+		String lower = abc.toLowerCase();
+		//assertEquals("","abc", abc);
+		assertEquals("", "abc", lower);
+	}
+	
 }
