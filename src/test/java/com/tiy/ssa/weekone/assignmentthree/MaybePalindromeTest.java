@@ -6,7 +6,6 @@ import org.junit.Test;
 
 public class MaybePalindromeTest {
 
-	
 	@Test
 	public void isPalindrome(){
 		
@@ -27,4 +26,5 @@ public class MaybePalindromeTest {
 		assertFalse(d.toString().compareTo("goodbye")==0);
 	
 	}
+
 }
