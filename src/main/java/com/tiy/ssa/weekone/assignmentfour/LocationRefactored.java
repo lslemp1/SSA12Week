@@ -39,12 +39,13 @@ public LocationRefactored(int x, int y){
         return true;
     }
 
+    
     public int getX(){
         return x;
     }
     
     public int getY(){
-        
+        return y;
     }
 
 public LocationRefactored offset(int x, int y){

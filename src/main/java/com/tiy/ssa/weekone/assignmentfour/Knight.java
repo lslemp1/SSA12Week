@@ -12,8 +12,18 @@ public Knight(int x, int y){
 		current = home;
 	}
 	
-public PositionRefactored offset(){
+public LocationRefactored offset(){
     
+    int moveCount = 0;
+    
+    if(isHome())
+        return current = home.offset(2,1);
+    
+    //moveTwo = -1,2 
+    //moveThree = -2,-1
+    //moveFour = 1,-2
+    
+    return LocationRefactored(x,y);
 }
 
 
