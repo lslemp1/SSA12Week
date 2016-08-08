@@ -16,17 +16,17 @@ public class LocationTest {
 		Location b = new Location(5,25);
 		equals(b.move());
 		assertTrue(b.isHome());
-		assertEquals("check 4 moves", 4, b.move());
+		assertEquals("check 4 moves", 4, b.moveNum());
         
-        Location c = new Location(-15,10);
+        Location c = new Location(-15,174);
         equals(c.move());
         assertTrue(c.isHome());
-        assertEquals("check 4 moves", 4, c.move());
+        assertEquals("check 4 moves", 4, c.moveNum());
         
         Location d = new Location(-60,-74);
         equals(d.move());
         assertTrue(d.isHome());
-        assertEquals("check 4 moves", 4, d.move());
+        assertEquals("check 4 moves", 4, d.moveNum());
 	}
 
 }
