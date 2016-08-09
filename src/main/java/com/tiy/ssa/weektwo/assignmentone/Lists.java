@@ -7,19 +7,28 @@ import java.util.List;
 
 public class Lists {
 
+    private Lists(){
+        
+    }
+    
+    
     public static <T> List<T> match(List<T> one, List<T> other)
     {
-        List<T> common = new ArrayList<T>(other);
-        common.retainAll(one);
+        List<T> common = new ArrayList<T>();
+        for(T s: one){
+            if(!common.contains(s) && other.contains(s))
+                common.add(s);
+        }
+        
         return common;
-
     }
 
 
     public static List<String> descendingBySize(List<String> input)
     {
-
-       Comparator<String> descending = new Comparator<String>(){
+       List<String> descending = new ArrayList<String>(input);
+            
+       Comparator<String> sort = new Comparator<String>(){
            public int compare(String first, String second){
                if(first.length() > second.length())
                    return -1;
@@ -28,7 +37,7 @@ public class Lists {
                return 0;
            }
        };
-       Collections.sort(input, descending);
-       return input;
+       Collections.sort(descending, sort);
+       return descending;
     }
 }

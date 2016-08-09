@@ -16,13 +16,13 @@ public class ListsTest {
     
     @Before
     public void setup() {
-        this.one.add("Apple");
-        this.one.add("Orange");
-        this.one.add("Banana");
         
-        this.other.add("Blue");
-        this.other.add("Green");
-        this.other.add("Orange");
+        this.one.add("hi");
+        this.one.add("bye");
+        
+        this.other.add("hi");
+        this.other.add("hello");
+        this.other.add("hi");
         
         this.input.add("a");
         this.input.add("cat");
@@ -33,11 +33,11 @@ public class ListsTest {
     
     @Test
     public void match(){
-        assertEquals("", "[Orange]", Lists.match(one, other).toString());
-        assertFalse(Lists.match(one, other).toString().contains("[Apple]"));
-        assertFalse(Lists.match(one, other).toString().contains("[Banana]"));
-        assertFalse(Lists.match(one, other).toString().contains("[Blue]"));
-        assertFalse(Lists.match(one, other).toString().contains("[Green]"));
+        List<String> match = Lists.match(one, other);
+        assertEquals("[hi]", 1, match.size());
+        assertEquals("", "[hi]", Lists.match(one, other).toString());
+        assertFalse(Lists.match(one, other).toString().contains("[bye]"));
+        assertFalse(Lists.match(one, other).toString().contains("[hello]"));
     }
     
     @Test
