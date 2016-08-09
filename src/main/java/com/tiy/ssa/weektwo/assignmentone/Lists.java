@@ -3,7 +3,9 @@ package com.tiy.ssa.weektwo.assignmentone;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Lists {
 
@@ -22,6 +24,19 @@ public class Lists {
         
         return common;
     }
+    
+    public static <T> List<T> same(List<T> one, List<T> other)
+    {
+        Set<T> common = new HashSet<T>();
+        for(T s: one){
+            if(!common.contains(s) && other.contains(s))
+                common.add(s);
+        }
+        
+        return new ArrayList<T>(common);
+    }
+    
+    
 
 
     public static List<String> descendingBySize(List<String> input)
