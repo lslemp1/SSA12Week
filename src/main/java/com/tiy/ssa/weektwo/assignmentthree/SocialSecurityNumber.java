@@ -6,6 +6,8 @@ public class SocialSecurityNumber {
     
     public SocialSecurityNumber(String data)
     {
+        if(data.length() < 9)
+            throw new IllegalArgumentException(data + " isn't a valid SSN");
         this.data = data;
     }
     

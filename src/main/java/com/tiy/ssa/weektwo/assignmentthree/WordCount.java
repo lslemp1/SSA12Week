@@ -4,16 +4,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class WordCount {
 
-    Map<String, Integer> wordCount = new HashMap<String, Integer>();
-    List<String> words = new ArrayList<>();
-    int count = 0;
+    final Map<String, Integer> wordCount = new HashMap<String, Integer>();
+    final List<String> words = new ArrayList<>();
+    
 
     /**
      * 
@@ -32,7 +30,7 @@ public class WordCount {
     }
 
     public int count(String word) {
-        return wordCount.get(word);
+        return wordCount.getOrDefault(word,0);
     }
 
     /**

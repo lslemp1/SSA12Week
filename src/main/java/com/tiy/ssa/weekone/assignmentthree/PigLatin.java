@@ -19,8 +19,8 @@ public class PigLatin {
             sentence[i] = sentence[i].replaceAll(" ", "");
             String word = "";
             String locate = sentence[i];
-            char c = locate.charAt(0);
-            char b = locate.charAt(1);
+            char c = Character.toLowerCase(locate.charAt(0));
+            char b = Character.toLowerCase(locate.charAt(1));
 
             // begins with vowel
             if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
