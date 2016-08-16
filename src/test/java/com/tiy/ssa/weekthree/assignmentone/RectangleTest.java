@@ -42,9 +42,5 @@ public class RectangleTest {
         assertEquals("", 4, s.area(), .01);
     }
     
-    @Test
-    public void rectangle(){
-        Rectangle r = new Rectangle(10,4);
-    }
 
 }
