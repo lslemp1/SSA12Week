@@ -1,4 +1,4 @@
-package com.tiy.ssa.weekthree.assignmenttwo;
+package com.tiy.ssa.weekthree.assignmentone;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,8 @@ import java.util.Iterator;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.tiy.ssa.weekthree.assignmentone.FixFor;
 
 public class FixForTest {
 

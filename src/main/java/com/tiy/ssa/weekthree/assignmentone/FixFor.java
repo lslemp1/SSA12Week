@@ -1,4 +1,4 @@
-package com.tiy.ssa.weekthree.assignmenttwo;
+package com.tiy.ssa.weekthree.assignmentone;
 
 import java.util.Iterator;
 
