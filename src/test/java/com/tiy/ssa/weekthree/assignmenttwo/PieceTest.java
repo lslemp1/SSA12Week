@@ -56,6 +56,33 @@ public class PieceTest {
         assertTrue(pawn.canMove(new Location(7,3)));
         assertFalse(pawn.canMove(new Location(6,1)));
     }
+    
+    @Test
+    public void compare(){
+       Piece king = new King(new Location(0,4));
+       Piece king2 = new King(new Location(3,4));
+       Piece queen = new Queen(new Location(0,3));
+       Piece rook = new Rook(new Location(7,0));
+       Piece bishop = new Bishop(new Location(3,3));
+       Piece knight = new Knight(new Location(0,6));
+       Piece pawn = new Pawn(new Location(1,5));
+       
+       assertEquals("", 1, queen.compareTo(pawn));
+       assertEquals("", -1, pawn.compareTo(knight));
+       assertEquals("", -1, knight.compareTo(bishop));
+       assertEquals("", 1, king.compareTo(rook));
+       assertEquals("", 1, king2.compareTo(king));  
+       
+       
+       assertFalse(king.canMove(new Location(0,4)));
+       assertFalse(queen.canMove(new Location(0,3)));
+       assertFalse(rook.canMove(new Location(7,0)));
+       assertFalse(bishop.canMove(new Location(3,3)));
+       assertFalse(knight.canMove(new Location(0,6)));
+       assertFalse(pawn.canMove(new Location(1,5)));
+       
+    }
+    
 
     
 }

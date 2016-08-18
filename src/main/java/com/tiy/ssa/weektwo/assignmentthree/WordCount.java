@@ -11,6 +11,7 @@ public class WordCount {
 
     final Map<String, Integer> wordCount = new HashMap<String, Integer>();
     final List<String> words = new ArrayList<>();
+    final List<String> wordRef = new ArrayList<>();
     
 
     /**
@@ -41,33 +42,22 @@ public class WordCount {
      */
     public List<String> top(int many) {
 
-        ArrayList<String> mostFrequent = new ArrayList<String>();
+        List<String> mostFrequent = new ArrayList<String>();
+        List<Map.Entry<String, Integer>> top = new ArrayList<Map.Entry<String, Integer>>(wordCount.entrySet());
 
-        for (String s : words) {
-            Integer frequency = wordCount.get(s);
-            if (frequency == null)
-                frequency = 1;
-            else
-                frequency++;
-            wordCount.put(s, frequency);
-        }
-
-        ArrayList<Integer> top = new ArrayList<Integer>();
-        top.addAll(wordCount.values());
-        Collections.sort(top, Collections.reverseOrder());
-        int j = -1;
-
-        for (Integer i : top.subList(0, many)) {
-            if (j == i)
-                continue;
-            j = i;
-
-            for (String s : wordCount.keySet()) {
-                if (wordCount.get(s) == i)
-                    mostFrequent.add(s);
+        Collections.sort(top, new Comparator<Map.Entry<String, Integer>>() {
+            public int compare(Map.Entry<String, Integer> first, Map.Entry<String, Integer> second) {
+                return (first.getValue()).compareTo(second.getValue());
             }
+        });
+
+        for (Map.Entry<String, Integer> s : top) {
+            mostFrequent.add(s.getKey());
         }
-        return mostFrequent;
+
+        Collections.reverse(mostFrequent);
+
+        return mostFrequent.subList(0, many);
     }
 
     /**
@@ -77,7 +67,7 @@ public class WordCount {
      *         order, so bottom <code>many</code> words
      */
     public List<String> bottom(int many) {
-
+        
         List<String> leastFrequent = new ArrayList<String>();
         List<Map.Entry<String, Integer>> bottom = new ArrayList<Map.Entry<String, Integer>>(wordCount.entrySet());
 
