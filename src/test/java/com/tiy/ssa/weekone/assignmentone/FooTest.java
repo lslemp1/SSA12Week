@@ -8,7 +8,7 @@ public class FooTest {
 
 	@Test
 	public void test() {
-		assertEquals(5, new Foo().helloClass());
+		assertEquals(5, new Foo().getClass());
 	}
 
 }

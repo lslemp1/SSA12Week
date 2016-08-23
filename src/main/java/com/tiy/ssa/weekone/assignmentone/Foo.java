@@ -3,13 +3,19 @@ package com.tiy.ssa.weekone.assignmentone;
 import static org.junit.Assert.*;
 import java.time.LocalDate;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 public class Foo {
 
+    static final Logger LOGGER = LogManager.getLogger(Foo.class);
+   
+    
 	public void foo(LocalDate date)
 	{
-	    System.err.println("foo LD");
+	    LOGGER.debug("foo LD");
+	    
 	}
 	
 	public void foo(LocalDate date, int offset)
@@ -19,7 +25,7 @@ public class Foo {
 	
 	public void foo(Object obj)
 	{
-	    System.err.println("foo obj");
+	    LOGGER.debug("foo obj");
 	}
 	
 	@Test

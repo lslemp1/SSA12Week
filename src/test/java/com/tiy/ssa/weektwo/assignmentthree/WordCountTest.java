@@ -9,11 +9,17 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.tiy.ssa.weekone.assignmentone.Foo;
+
 public class WordCountTest {
 
+    static final Logger LOGGER = LogManager.getLogger(WordCountTest.class);
+    
     static String SOURCE = "CONTENT CONTENT CONTENT OF OF OF WIKIPEDIA WIKIPEDIA WIKIPEDIA " + "WIKIPEDIA WIKIPEDIA"
             + " PARAGRAPHS GO GO GO GO GO GO GO GO GO HERE HERE";
     WordCount wordCount = new WordCount();
@@ -80,8 +86,8 @@ public class WordCountTest {
             if(null!= reader)
                 reader.close();
         }
-        System.err.println(this.counter.bottom(25));
-        System.err.println(this.counter.top(25));
+        LOGGER.debug(this.counter.bottom(25));
+        LOGGER.debug(this.counter.top(25));
         assertTrue(this.counter.count("juliet") < 10 );
         assertTrue(this.counter.count("thou") > 1_000 );
     }

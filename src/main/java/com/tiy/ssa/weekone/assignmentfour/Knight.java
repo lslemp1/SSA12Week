@@ -21,7 +21,8 @@ public class Knight {
         // moveThree = -2,-1
         // moveFour = 1,-2
 
-        return LocationRefactored(x, y);
+        //return LocationRefactored(x, y);
+        return null;
     }
 
     public LocationRefactored getLocation() {

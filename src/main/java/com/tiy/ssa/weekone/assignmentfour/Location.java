@@ -2,8 +2,13 @@ package com.tiy.ssa.weekone.assignmentfour;
 
 import java.util.Arrays;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Location {
 
+    static final Logger LOGGER = LogManager.getLogger(Location.class);
+    
     public final int x, y;
     int currentX;
     int currentY;
@@ -162,7 +167,7 @@ public class Location {
 
     public int[] getLocation() {
         int[] newPosition = { currentX, currentY };
-        System.out.println("Current Location: " + Arrays.toString(newPosition));
+        LOGGER.debug("Current Location: " + Arrays.toString(newPosition));
         return newPosition;
     }
 
